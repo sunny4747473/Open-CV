@@ -1,6 +1,6 @@
 def read_image():
     import cv2 as cv
-    img=cv.imread('cat.jpg')
+    img=cv.imread('Photos/cat.jpg')
     cv.imshow('Photo',img)
     cv.waitKey(0)
 
@@ -17,7 +17,7 @@ def read_video():
 
 def resize():
     import cv2 as cv
-    img=cv.imread('cat.jpg')
+    img=cv.imread('Photos/cat.jpg')
     cv.imshow('Cat',img)
     def rescaleFrame(frame,scale=0.75):
         width=int(frame.shape[1]*scale)
