@@ -15,7 +15,7 @@ def read_video():
     capture.release()
     cv.destroyAllWindows()
 
-def resize():
+def img_resize():
     import cv2 as cv
     img=cv.imread('Photos/cat.jpg')
     cv.imshow('Cat',img)
@@ -28,7 +28,7 @@ def resize():
     cv.imshow('Resized Cat',resized_image)
     cv.waitKey(0)
 
-def rescale():
+def img_rescale():
     import cv2 as cv
     capture=cv.VideoCapture('Videos/dog.mp4')
     def rescaleFrame(frame,scale=0.75):
@@ -94,7 +94,7 @@ def text():
     cv.imshow('Text',blank)
     cv.waitKey(0)
 
-def shapes():
+def Shapes_text():
     #blank
     import cv2 as cv
     import numpy as np
@@ -117,9 +117,7 @@ def shapes():
     cv.imshow('Line',blank)
     cv.waitKey(0)
     
-    
-#  ESSENTIAL FUNCTIONS 
-
+#  Imp Functions
 def gray():
     import cv2 as cv
     img=cv.imread('Photos/cat.jpg')
@@ -168,7 +166,7 @@ def erode():
     
 # IMAGE TRANSFORMATIONS 
     
-def translate():
+def image_translation():
     import cv2 as cv
     import numpy as np
     img=cv.imread('Photos/park.jpg',0)
@@ -179,7 +177,7 @@ def translate():
     cv.waitKey(0)
     cv.destroyAllWindows
     
-def reflection_xaxis():
+def image_reflection_xaxis():
     import numpy as np
     import cv2 as cv
     img = cv.imread('Photos/cat.jpg', 0)
@@ -192,7 +190,7 @@ def reflection_xaxis():
     cv.waitKey(0)
     cv.destroyAllWindows()  
     
-def reflection_yaxis():
+def image_reflection_yaxis():
     import numpy as np
     import cv2 as cv
     img = cv.imread('Photos/cat.jpg', 0)
@@ -205,7 +203,7 @@ def reflection_yaxis():
     cv.waitKey(0)
     cv.destroyAllWindows() 
 
-def rotate():
+def img_rotation():
     import numpy as np
     import cv2 as cv
     img = cv.imread('Photos/cat.jpg', 0)
@@ -217,7 +215,7 @@ def rotate():
     cv.waitKey(0)
     cv.destroyAllWindows()
     
-def shrink():
+def img_shrink():
     import numpy as np
     import cv2 as cv
     img = cv.imread('Photos/cat.jpg', 0)
@@ -229,7 +227,7 @@ def shrink():
     cv.waitKey(0)
     cv.destroyAllWindows()
     
-def enlarge():
+def img_enlarge():
     import numpy as np
     import cv2 as cv
     img = cv.imread('Photos/cat.jpg', 0)
@@ -239,7 +237,7 @@ def enlarge():
     cv.destroyAllWindows()
 
 
-def crop():
+def img_croping():
     import cv2 as cv
     img=cv.imread('Photos/park.jpg')
     cv.imshow('Cat',img)
@@ -247,7 +245,7 @@ def crop():
     cv.imshow('Cropped',cropped)
     cv.waitKey(0)
 
-def xaxis_shearing():
+def shearing_Xaxis():
     import numpy as np
     import cv2 as cv
     img = cv.imread('Photos/cat.jpg', 0)
@@ -258,7 +256,7 @@ def xaxis_shearing():
     cv.waitKey(0)
     cv.destroyAllWindows()
     
-def yaxis_shearing():
+def Shearing_Yaxis():
     import numpy as np
     import cv2 as cv
     img = cv.imread('Photos/cat.jpg', 0)
@@ -269,7 +267,7 @@ def yaxis_shearing():
     cv.waitKey(0)
     cv.destroyAllWindows() 
     
-def contours():
+def contour_detection():
     import cv2 as cv
     import numpy as np
     img=cv.imread('Photos/cat.jpg')
@@ -283,7 +281,7 @@ def contours():
     cv.waitKey(0)
     cv.destroyAllWindows
     
-def color_spaces():
+def Color_spaces():
     import cv2 as cv
     img=cv.imread('Photos/cat.jpg')
     B,G,R=cv.split(img)
@@ -295,10 +293,8 @@ def color_spaces():
     cv.waitKey(0)
     cv.imshow('red',R)
     cv.waitKey(0)
-
-#Smoothing AND Blurring
-
-def convolution():
+#Smooting and blurring
+def img_convolution():
     import cv2
     import numpy as np
     image = cv2.imread('Photos/cat.jpg')
@@ -309,7 +305,7 @@ def convolution():
     cv2.waitKey()
     cv2.destroyAllWindows() 
 
-def averaging():
+def averaging_blur():
     import cv2
     import numpy as np
     image = cv2.imread('Photos/cat.jpg')
@@ -329,7 +325,7 @@ def gaussian_blur():
     cv2.waitKey()
     cv2.destroyAllWindows()
     
-def median():
+def median_blur():
     import cv2
     import numpy as np
     image = cv2.imread('Photos/cat.jpg')
@@ -339,7 +335,7 @@ def median():
     cv2.waitKey()
     cv2.destroyAllWindows()
     
-def bilateral():
+def bilateral_blur():
     import cv2
     import numpy as np
     image = cv2.imread('Photos/cat.jpg')
@@ -392,8 +388,7 @@ def bitwise_not():
     cv2.imshow('Bitwise NOT on image 2', dest_not2)
     if cv2.waitKey(0) & 0xff == 27:
         cv2.destroyAllWindows()
-
-#Masking and histogram
+#Masking,Histogram Computation
 
 def masking():
     import cv2 as cv
@@ -431,7 +426,7 @@ def alpha_blurring():
     cv2.destroyAllWindows()
 
 
-def histogram():
+def histogram_computation():
     import cv2
     from matplotlib import pyplot as plt
     img = cv2.imread('Photos/park.jpg',0)
