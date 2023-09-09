@@ -233,13 +233,11 @@ def enlarge():
     import numpy as np
     import cv2 as cv
     img = cv.imread('Photos/cat.jpg', 0)
-    rows, cols = img.shape
-    img_enlarged = cv.resize(img_enlarged, None,fx=1.5, fy=1.5,interpolation=cv.INTER_CUBIC)
-    cv.imshow('img', img_enlarged)
-    img_enlarged = cv.resize(img_enlarged, None,fx=1.5, fy=1.5,interpolation=cv.INTER_CUBIC)
+    img_enlarged = cv.resize(img, None, fx=1.5, fy=1.5, interpolation=cv.INTER_CUBIC)
     cv.imshow('img', img_enlarged)
     cv.waitKey(0)
     cv.destroyAllWindows()
+
 
 def crop():
     import cv2 as cv
@@ -416,19 +414,22 @@ def alpha_blurring():
     img1 = cv2.imread('Photos/cat.jpg')
     img2 = cv2.imread('Photos/park.jpg')
     img2 = cv2.resize(img2, img1.shape[1::-1])
-    cv2.imshow("img 1",img1)
+    cv2.imshow("img 1", img1)
     cv2.waitKey(0)
-    cv2.imshow("img 2",img2)
+    cv2.imshow("img 2", img2)
     cv2.waitKey(0)
     choice = 1
-    while (choice):
+    while choice:
         alpha = float(input("Enter alpha value: "))
-        dst = cv2.addWeighted(img1, alpha , img2, 1-alpha, 0)
+        dst = cv2.addWeighted(img1, alpha, img2, 1 - alpha, 0)
         cv2.imwrite('alpha_mask_.png', dst)
         img3 = cv2.imread('alpha_mask_.png')
-        cv2.imshow("alpha blending 1",img3)
+        cv2.imshow("alpha blending", img3)
         cv2.waitKey(0)
         choice = int(input("Enter 1 to continue and 0 to exit: "))
+    
+    cv2.destroyAllWindows()
+
 
 def histogram():
     import cv2
