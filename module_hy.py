@@ -123,7 +123,7 @@ def gray():
     img=cv.imread('Photos/cat.jpg')
     cv.imshow('Color',img)
     gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
-    cv.imshow('Gray',gray)
+    cv.imshow('Gray_img',gray)
     cv.waitKey(0)
     
 def blur():
@@ -131,7 +131,7 @@ def blur():
     img=cv.imread('Photos/park.jpg')
     cv.imshow('Cat',img)
     blur=cv.GaussianBlur(img,(3,3),cv.BORDER_DEFAULT)
-    cv.imshow('Blur',blur)
+    cv.imshow('Img_Blur',blur)
     cv.waitKey(0)
     
 def edge_cascade():
@@ -149,8 +149,8 @@ def erode():
     canny=cv.Canny(img,125,175)
     dilated=cv.dilate(img,(3,3),iterations=1)
     eroded=cv.erode(dilated,(3,3),iterations=1)
-    #cv.imshow('Dilated',dilated)
-    cv.imshow('Eroded',eroded)
+    cv.imshow('Dilated_img',dilated)
+    cv.imshow('Eroded_img',eroded)
     cv.waitKey(0)
 
 def dilate():
@@ -159,9 +159,7 @@ def dilate():
     cv.imshow('Cat',img)
     canny=cv.Canny(img,125,175)
     dilated=cv.dilate(img,(3,3),iterations=1)
-    #eroded=cv.erode(dilated,(3,3),iterations=1)
-    cv.imshow('Dilated',dilated)
-    #cv.imshow('Eroded',eroded)
+    cv.imshow('Dilated_img',dilated)
     cv.waitKey(0)
     
 # Img Transformations
@@ -173,7 +171,7 @@ def image_translation():
     rows,cols=img.shape
     M=np.float32([[1,0,100],[0,1,50]])
     dst=cv.warpAffine(img,M,(cols,rows))
-    cv.imshow('Image',dst)
+    cv.imshow('Img_Transform',dst)
     cv.waitKey(0)
     cv.destroyAllWindows
     
@@ -182,8 +180,8 @@ def image_reflection_xaxis():
     import cv2 as cv
     img = cv.imread('Photos/cat.jpg', 0)
     rows, cols = img.shape
-    #M = np.float32([[1,  0, 0],[0, -1, rows],[0,  0, 1]]) #vertical
-    M = np.float32([[-1, 0, cols], [0, 1, 0], [0, 0, 1]]) #horizontal
+    #M = np.float32([[1,  0, 0],[0, -1, rows],[0,  0, 1]]) 
+    M = np.float32([[-1, 0, cols], [0, 1, 0], [0, 0, 1]]) 
     reflected_img = cv.warpPerspective(img, M,(int(cols),int(rows)))
     cv.imshow('img', reflected_img)
     cv.imwrite('reflection_out.jpg', reflected_img)
@@ -195,8 +193,8 @@ def image_reflection_yaxis():
     import cv2 as cv
     img = cv.imread('Photos/cat.jpg', 0)
     rows, cols = img.shape
-    M = np.float32([[1,  0, 0],[0, -1, rows],[0,  0, 1]]) #vertical
-    #M = np.float32([[-1, 0, cols], [0, 1, 0], [0, 0, 1]]) #horizontal
+    M = np.float32([[1,  0, 0],[0, -1, rows],[0,  0, 1]]) 
+    #M = np.float32([[-1, 0, cols], [0, 1, 0], [0, 0, 1]]) 
     reflected_img = cv.warpPerspective(img, M,(int(cols),int(rows)))
     cv.imshow('img', reflected_img)
     cv.imwrite('reflection_out.jpg', reflected_img)
