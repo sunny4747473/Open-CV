@@ -141,6 +141,17 @@ def edge_cascade():
     canny=cv.Canny(img,125,175)
     cv.imshow('Canny',canny)
     cv.waitKey(0)
+    
+def erode():
+    import cv2 as cv
+    img=cv.imread('Photos/park.jpg')
+    cv.imshow('Cat',img)
+    canny=cv.Canny(img,125,175)
+    dilated=cv.dilate(img,(3,3),iterations=1)
+    eroded=cv.erode(dilated,(3,3),iterations=1)
+    #cv.imshow('Dilated',dilated)
+    cv.imshow('Eroded',eroded)
+    cv.waitKey(0)
 
 def dilate():
     import cv2 as cv
@@ -153,18 +164,7 @@ def dilate():
     #cv.imshow('Eroded',eroded)
     cv.waitKey(0)
     
-def erode():
-    import cv2 as cv
-    img=cv.imread('Photos/park.jpg')
-    cv.imshow('Cat',img)
-    canny=cv.Canny(img,125,175)
-    dilated=cv.dilate(img,(3,3),iterations=1)
-    eroded=cv.erode(dilated,(3,3),iterations=1)
-    #cv.imshow('Dilated',dilated)
-    cv.imshow('Eroded',eroded)
-    cv.waitKey(0)
-    
-# IMAGE TRANSFORMATIONS 
+# Img Transformations
     
 def image_translation():
     import cv2 as cv
@@ -215,6 +215,15 @@ def img_rotation():
     cv.waitKey(0)
     cv.destroyAllWindows()
     
+def img_enlarge():
+    import numpy as np
+    import cv2 as cv
+    img = cv.imread('Photos/cat.jpg', 0)
+    img_enlarged = cv.resize(img, None, fx=1.5, fy=1.5, interpolation=cv.INTER_CUBIC)
+    cv.imshow('img', img_enlarged)
+    cv.waitKey(0)
+    cv.destroyAllWindows()
+
 def img_shrink():
     import numpy as np
     import cv2 as cv
@@ -226,16 +235,6 @@ def img_shrink():
     cv.imshow('img', img_enlarged)
     cv.waitKey(0)
     cv.destroyAllWindows()
-    
-def img_enlarge():
-    import numpy as np
-    import cv2 as cv
-    img = cv.imread('Photos/cat.jpg', 0)
-    img_enlarged = cv.resize(img, None, fx=1.5, fy=1.5, interpolation=cv.INTER_CUBIC)
-    cv.imshow('img', img_enlarged)
-    cv.waitKey(0)
-    cv.destroyAllWindows()
-
 
 def img_croping():
     import cv2 as cv
@@ -423,8 +422,7 @@ def alpha_blurring():
         cv2.waitKey(0)
         choice = int(input("Enter 1 to continue and 0 to exit: "))
     
-    cv2.destroyAllWindows()
-
+   cv2.destroyAllWindows()
 
 def histogram_computation():
     import cv2
