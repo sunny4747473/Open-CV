@@ -356,8 +356,8 @@ def bilateral():
 def bitwise_and():
     import cv2 
     import numpy as np 
-    img1 = cv2.imread('RESOURCES/Photos/input1.png')  
-    img2 = cv2.imread('RESOURCES/Photos/input2.png') 
+    img1 = cv2.imread('Photos/input1.png')  
+    img2 = cv2.imread('Photos/input2.png') 
     dest_and = cv2.bitwise_and(img2, img1, mask = None)
     cv2.imshow('Bitwise And', dest_and)
     if cv2.waitKey(0) & 0xff == 27: 
@@ -366,8 +366,8 @@ def bitwise_and():
 def bitwise_or():
     import cv2
     import numpy as np
-    img1 = cv2.imread('RESOURCES/Photos/input1.png')
-    img2 = cv2.imread('RESOURCES/Photos/input2.png')
+    img1 = cv2.imread('Photos/input1.png')
+    img2 = cv2.imread('Photos/input2.png')
     dest_or = cv2.bitwise_or(img2, img1, mask = None)
     cv2.imshow('Bitwise OR', dest_or)
     if cv2.waitKey(0) & 0xff == 27:
@@ -376,8 +376,8 @@ def bitwise_or():
 def bitwise_xor():
     import cv2
     import numpy as np
-    img1 = cv2.imread('RESOURCES/Photos/input1.png')
-    img2 = cv2.imread('RESOURCES/Photos/input2.png')
+    img1 = cv2.imread('Photos/input1.png')
+    img2 = cv2.imread('Photos/input2.png')
     dest_xor = cv2.bitwise_xor(img1, img2, mask = None)
     cv2.imshow('Bitwise XOR', dest_xor)
     if cv2.waitKey(0) & 0xff == 27:
@@ -386,8 +386,8 @@ def bitwise_xor():
 def bitwise_not():
     import cv2
     import numpy as np
-    img1 = cv2.imread('RESOURCES/Photos/input1.png')
-    img2 = cv2.imread('RESOURCES/Photos/input2.png')
+    img1 = cv2.imread('Photos/input1.png')
+    img2 = cv2.imread('Photos/input2.png')
     dest_not1 = cv2.bitwise_not(img1, mask = None)
     dest_not2 = cv2.bitwise_not(img2, mask = None)
     cv2.imshow('Bitwise NOT on image 1', dest_not1)
@@ -400,7 +400,7 @@ def bitwise_not():
 def masking():
     import cv2 as cv
     import numpy as np
-    img = cv.imread('RESOURCES/Photos/park.jpg')
+    img = cv.imread('Photos/park.jpg')
     cv.imshow('Original image', img)
     blank = np.zeros(img.shape[:2], dtype='uint8')
     cv.imshow('Blank Image', blank)
@@ -413,8 +413,8 @@ def masking():
 
 def alpha_blurring():
     import cv2
-    img1 = cv2.imread('RESOURCES/Photos/cat.jpg')
-    img2 = cv2.imread('RESOURCES/Photos/park.jpg')
+    img1 = cv2.imread('Photos/cat.jpg')
+    img2 = cv2.imread('Photos/park.jpg')
     img2 = cv2.resize(img2, img1.shape[1::-1])
     cv2.imshow("img 1",img1)
     cv2.waitKey(0)
@@ -433,7 +433,7 @@ def alpha_blurring():
 def histogram():
     import cv2
     from matplotlib import pyplot as plt
-    img = cv2.imread('RESOURCES/Photos/park.jpg',0)
+    img = cv2.imread('Photos/park.jpg',0)
     histr = cv2.calcHist([img],[0],None,[256],[0,256])
     plt.plot(histr)
     plt.show()
