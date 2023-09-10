@@ -62,7 +62,7 @@ def paint():
     cv.imshow('Blue',blank)
     cv.waitKey(0)
 
-def rect():
+def rectangle():
     import cv2 as cv
     import numpy as np
     blank=np.zeros((500,500,3),dtype='uint8')
@@ -118,20 +118,12 @@ def Shapes_text():
     cv.waitKey(0)
     
 #  Imp Functions
-def gray():
+def Img_gray():
     import cv2 as cv
     img=cv.imread('Photos/cat.jpg')
     cv.imshow('Color',img)
     gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
     cv.imshow('Gray_img',gray)
-    cv.waitKey(0)
-    
-def blur():
-    import cv2 as cv
-    img=cv.imread('Photos/park.jpg')
-    cv.imshow('Cat',img)
-    blur=cv.GaussianBlur(img,(3,3),cv.BORDER_DEFAULT)
-    cv.imshow('Img_Blur',blur)
     cv.waitKey(0)
     
 def edge_cascade():
@@ -140,6 +132,14 @@ def edge_cascade():
     cv.imshow('Cat',img)
     canny=cv.Canny(img,125,175)
     cv.imshow('Canny',canny)
+    cv.waitKey(0)
+
+def blur():
+    import cv2 as cv
+    img=cv.imread('Photos/park.jpg')
+    cv.imshow('Cat',img)
+    blur=cv.GaussianBlur(img,(3,3),cv.BORDER_DEFAULT)
+    cv.imshow('Img_Blur',blur)
     cv.waitKey(0)
     
 def erode():
