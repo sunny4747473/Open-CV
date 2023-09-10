@@ -145,7 +145,7 @@ def blur():
 def erode():
     import cv2 as cv
     img=cv.imread('Photos/park.jpg')
-    cv.imshow('Cat',img)
+    cv.imshow('Park',img)
     canny=cv.Canny(img,125,175)
     dilated=cv.dilate(img,(3,3),iterations=1)
     eroded=cv.erode(dilated,(3,3),iterations=1)
@@ -156,7 +156,7 @@ def erode():
 def dilate():
     import cv2 as cv
     img=cv.imread('Photos/park.jpg')
-    cv.imshow('Cat',img)
+    cv.imshow('Park',img)
     canny=cv.Canny(img,125,175)
     dilated=cv.dilate(img,(3,3),iterations=1)
     cv.imshow('Dilated_img',dilated)
@@ -268,17 +268,17 @@ import cv2 as cv
 import numpy as np
 
 def contour_detection():
-    img = cv.imread('Photos/cat.jpg')
-    gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-    edge = cv.Canny(gray, 30, 300)
-    contours, hierarchy = cv.findContours(edge, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
-    cv.imshow('Canny edges after contouring', edge)
-    # Print the number of contours found
-    print('Number of contours found:', len(contours))
-    cv.drawContours(img, contours, -1, (0, 255, 0), 3)  # -1 signifies drawing all contours
-    cv.imshow('contours', img)
-    cv.waitKey(0)
-    cv.destroyAllWindows()
+   import cv2 as cv
+   img = cv.imread('Photos/cat.jpg')
+   gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+   edge = cv.Canny(gray, 30, 300)
+   contours, hierarchy = cv.findContours(edge, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
+   cv.imshow('Canny edges after contouring', edge)
+   print('Number of contours found:', len(contours))
+   cv.drawContours(img, contours, -1, (0, 255, 0), 3) 
+   cv.imshow('contours', img)
+   cv.waitKey(0)
+   cv.destroyAllWindows()
 
     
 def Color_spaces():
