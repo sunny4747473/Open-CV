@@ -95,23 +95,23 @@ def text():
     cv.waitKey(0)
 
 def Shapes_text():
-    #blank
+#blank
     import cv2 as cv
     import numpy as np
     blank=np.zeros((500,500,3),dtype='uint8')
-    #paint
+#paint
     blank=np.zeros((500,500,3),dtype='uint8')
     blank[200:300,300:400]=255,0,0
     cv.imshow('Blue',blank)
-    #rect
+#rectangle
     blank=np.zeros((500,500,3),dtype='uint8')
     cv.rectangle(blank,(0,0),(blank.shape[1]//2,blank.shape[0]//2),(255,0,0),thickness=3)
     cv.imshow('Rectangle',blank)
-    #circle
+#circle
     blank=np.zeros((500,500,3),dtype='uint8')
     cv.circle(blank,(blank.shape[1]//2,blank.shape[0]//2),40,(0,255,0),thickness=-1)
     cv.imshow('Circle',blank)
-    #line
+#line
     blank=np.zeros((500,500,3),dtype='uint8')
     cv.line(blank,(0,0),(300,400),(255,255,255),thickness=3)
     cv.imshow('Line',blank)
@@ -264,19 +264,22 @@ def Shearing_Yaxis():
     cv.waitKey(0)
     cv.destroyAllWindows() 
     
+import cv2 as cv
+import numpy as np
+
 def contour_detection():
-    import cv2 as cv
-    import numpy as np
-    img=cv.imread('Photos/cat.jpg')
-    gray=cv.cvtcolor(img,cv.COLOR_BGR2GRAY)
-    edge=cv.Canny(gray,30,300)
-    contours,hierarchy=cv.findContours(edge,cv.RETR_EXTERNAL,cv.CHAIN_APPROX_NONE)
-    cv.imshow('Canny edges after contouring',edge)
-    print('Number of contours found=',+str(len(contours)))
-    cv.drawContours(img,contours,-1,(0,255,0),3) #-1 signifies drawing all contours
-    cv.imshow('contours',img)
+    img = cv.imread('Photos/cat.jpg')
+    gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+    edge = cv.Canny(gray, 30, 300)
+    contours, hierarchy = cv.findContours(edge, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
+    cv.imshow('Canny edges after contouring', edge)
+    # Print the number of contours found
+    print('Number of contours found:', len(contours))
+    cv.drawContours(img, contours, -1, (0, 255, 0), 3)  # -1 signifies drawing all contours
+    cv.imshow('contours', img)
     cv.waitKey(0)
-    cv.destroyAllWindows
+    cv.destroyAllWindows()
+
     
 def Color_spaces():
     import cv2 as cv
@@ -420,7 +423,7 @@ def alpha_blurring():
         cv2.waitKey(0)
         choice = int(input("Enter 1 to continue and 0 to exit: "))
     
-   cv2.destroyAllWindows()
+    cv2.destroyAllWindows()
 
 def histogram_computation():
     import cv2
